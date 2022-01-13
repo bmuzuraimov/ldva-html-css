@@ -65,20 +65,41 @@ hr {
     width: 32px;
     display: block;
     margin: 12px 13px;
-    vertical-align: middle;
     border-style: none;
 }
 .menu-ico {
     width: 64px;
     height: 64px;
-    padding: 16px;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color:#595959;
+    
+}
+
+.menu-ico:hover {
+    transform: scale(1.06);
+    color: #146abb;
+    transition: ease-in-out 0.2s;
+   
+}
+
+.menu-ico a{
+    margin:0px;
+    color: inherit;
+
+}
+
+.menu-ico a {
     display: inline-block;
-    font-size: 14px;
 }
-.menu-ico img {
-    width: 22px;
+
+#active  {
+    color: #1890FF;
 }
+
 /* ========================================
    Main header
    ====================================== */
@@ -94,12 +115,12 @@ hr {
     background: #FFFFFF;
 }
 .main__header h2 {
-    font-weight: normal;
+    font-weight: 500;
     font-size: 20px;
     line-height: 28px;
     text-align: center;
     letter-spacing: -0.5px;
-    color: rgba(0, 0, 0, 0.85);
+    color:#595959;
 }
 .main__header:before {
     position: absolute;
