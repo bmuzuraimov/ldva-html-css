@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style/style.css">
+		<link rel="stylesheet" href="style/morris.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<title>Long range</title>
+	</head>
+	<body>
+		<nav class="menu">
+			<a href="#navbar" class="menu__logo"><img src="images/icons/ai-academy.svg" alt="logo"></a>
+			<ul>
+				<li class="menu-ico">
+					<a href="#home"><img src="images/icons/home.svg" alt="logo"></a>
+				</li>
+				<li class="menu-ico">
+					<a href="#camera"><img src="images/icons/camera_blue.svg" alt="logo"></a>
+				</li>
+				<li class="menu-ico">
+					<a href="#camera"><img src="images/icons/camera.svg" alt="logo" fill="red"></a>
+				</li>
+				<li class="menu-ico">
+					<a href="#camera"><img src="images/icons/camera.svg" alt="logo"></a>
+				</li>
+				<li class="menu-ico">
+					<a href="#camera"><img src="images/icons/camera.svg" alt="logo"></a>
+				</li>
+			</ul>
+		</nav>
+		<article class="main">
+			<header class="main__header">
+				<h2>Camera 1</h2>
+				<ul class="header__perfomance">
+					<li>GPU: <span class="green">50&#176;</span> 1633Mhz</li>&emsp;
+					<li>CPU: <span class="orange">68&#176;</span> 4933Mhz</li>
+				</ul>
+			</header>
+			<section class="main__container">
+				<div class="panel__bar">
+					<h6>Count</h6>
+					<hr>
+					<table class="panel-table">
+						<tr>
+							<td class="table__col1">With occlusion</td>
+							<td class="table__col2">2610</td>
+						</tr>
+						<tr>
+							<td class="table__col1">Tolerated Threshold</td>
+							<td class="table__col2"><button>Change</button>0.5</td>
+						</tr>
+						<tr>
+							<td class="table__col1">Total detection</td>
+							<td class="table__col2">2530</td>
+						</tr>
+						<tr>
+							<td class="table__col1">Detection inside</td>
+							<td class="table__col2">810</td>
+						</tr>
+						<tr>
+							<td class="table__col1">Detection outside</td>
+							<td class="table__col2">1733</td>
+						</tr>
+					</table>
+					<hr>
+					<button class="panel__btn" id="draw-btn">Set Region of Interest</button>
+					<table class="panel__tble1">
+						<tr>
+							<td class="column1">Live count</td>
+							<td class="column2"><img src="images/icons/info.svg" class="ico-info" width="32" alt="logo"></td>
+						</tr>
+					</table>
+					<h2>4600</h2>
+					<div id="graph"></div>
+				</div>
+				<div class="video-container">
+					<h6 class="video-title">Live</h6>
+					<hr>
+					<div class="video_face-mask">
+						<label for="face-mask">Face mask</label>
+						<img src="images/icons/info.svg" class="ico-info" width="32" alt="logo">
+						<input type="checkbox" id="face-mask" class="check-box">
+					</div>
+					<video controls autoplay="true" src="crowded-people.mp4" id="streaming-video"></video>
+					<div class="face-mask-rect hidden"></div>
+					<svg class="drawing-area hidden" width="100%" height="100%"></svg>
+				</div>
+			</section>
+			<section class="history-container">
+				<div class="history-title">
+					<h4>History</h4>
+					<p>Automatic snapshot every 30 seconds</p>
+				</div>
+				<hr>
+				<!-- photo slider -->
+				<div class="screenshots">
+					<i class="fas fa-chevron-left prev"></i>
+					<i class="fas fa-chevron-right next"></i>
+					<div class="screenshot-wrapper">
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="image-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="image-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="image-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="image-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="image-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //photo slider -->
+		</article>
+		<script type="text/javascript" src="script/jquery.js"></script>
+		<script type="text/javascript" src="script/morris.min.js"></script>
+		<script type="text/javascript" src="script/raphael-min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script type="text/javascript" src="script/script.js"></script>
+	</body>
+</html>
