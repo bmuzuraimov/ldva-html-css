@@ -618,6 +618,16 @@ hr {
     margin: 0;
     padding: 0;
 }
+.modal-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.modal-close i{
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.45);
+}
 .modal-threshold h4 {
     font-size: 16px;
     font-weight: 500;
@@ -632,6 +642,15 @@ hr {
     font-size: 14px;
     line-height: 22px;
     color: #000000;
+}
+#threshold-form .text-input {
+    padding: 5px 12px;
+    text-align: left;
+    width: 90px;
+    float: right;
+    outline: none;
+    border: 1px solid #D9D9D9;
+    border-radius: 3px;
 }
 #threshold-form .text-input {
     padding: 5px 12px;
