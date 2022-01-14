@@ -29,71 +29,109 @@
 				</li>
 			</ul>
 		</nav>
-		<article class="main">
-			<header class="main__header">
-				<h2>Camera 1</h2>
-				<ul class="header__perfomance">
-					<li>GPU: <span class="green">50&#176;</span> 1633Mhz</li>&emsp;
-					<li>CPU: <span class="#orange">68&#176;</span> 4933Mhz</li>
-				</ul>
+		<article class="dashboard-container">
+			<header class="page__header">
+				<h2>Dashboard</h2>
 			</header>
-			<section class="main__container">
-				<div class="panel__bar">
-					<h6>Count</h6>
-					<hr>
-					<table class="panel-table">
-						<tr>
-							<td class="table__col1">With occlusion</td>
-							<td class="table__col2">2610</td>
-						</tr>
-						<tr>
-							<td class="table__col1">Tolerated Threshold</td>
-							<td class="table__col2"><button>Change</button>0.5</td>
-						</tr>
-						<tr>
-							<td class="table__col1">Total detection</td>
-							<td class="table__col2">2530</td>
-						</tr>
-						<tr>
-							<td class="table__col1">Detection inside</td>
-							<td class="table__col2">810</td>
-						</tr>
-						<tr>
-							<td class="table__col1">Detection outside</td>
-							<td class="table__col2">1733</td>
-						</tr>
-					</table>
-					<hr>
-					<button class="panel__btn" id="draw-btn">Set Region of Interest</button>
-					<table class="panel__tble1">
-						<tr>
-							<td class="column1">Live count</td>
-							<td class="column2"><img src="images/icons/info.svg" class="ico-info" width="32" alt="logo"></td>
-						</tr>
-					</table>
-					<h2>4600</h2>
-					<div id="graph"></div>
-				</div>
-				<div class="video-container">
-					<h6 class="video-title">Live</h6>
-					<hr>
-					<div class="video_face-mask">
-						<label for="face-mask">Face mask</label>
-						<img src="images/icons/info.svg" class="ico-info" width="32" alt="logo">
-						<input type="checkbox" id="face-mask" class="check-box">
+			<section class="live-view">
+				<h2>Live view</h2>
+				<hr>
+				<div class="live-wrapper">
+					<div class="live-cam">
+						<h2>Camera 1</h2>
+						<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+						<div class="screenshot-info">
+							<p>Count</p>
+							<p>10234342</p>
+						</div>
 					</div>
-					<video controls autoplay="true" src="crowded-people.mp4" id="streaming-video"></video>
-					<div class="face-mask-rect hidden"></div>
-					<svg class="drawing-area hidden" width="100%" height="100%"></svg>
+					<div class="live-cam">
+						<h2>Camera 2</h2>
+						<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+						<div class="screenshot-info">
+							<p>Count</p>
+							<p>10234342</p>
+						</div>
+					</div>
+					<div class="live-cam">
+						<h2>Camera 3</h2>
+						<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+						<div class="screenshot-info">
+							<p>Count</p>
+							<p>10234342</p>
+						</div>
+					</div>
+					<div class="live-cam">
+						<h2>Camera 4</h2>
+						<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+						<div class="screenshot-info">
+							<p>Count</p>
+							<p>10234342</p>
+						</div>
+					</div>
 				</div>
+			</section>
+			<section class="live-count">
+					<div class="live-count-left">
+						<table class="panel-table">
+							<tr>
+								<td class="table__col1">Live count</td>
+								<td class="table__col2"><img src="images/icons/info.svg" class="ico-info" width="32" alt="logo"></td>
+							</tr>
+						</table>
+						<h2>4600</h2>
+						<div id="graph"></div>
+					</div>
+					<table class="live-count-right">
+						<thead>
+							<td>System Status</td>
+							<td><i class="fas fa-circle fa-sm green"></i>Camera 1</td>
+							<td><i class="fas fa-circle fa-sm green"></i>Camera 2</td>
+							<td><i class="fas fa-circle fa-sm green"></i>Camera 3</td>
+							<td><i class="fas fa-circle fa-sm red"></i>Camera 4</td>
+						</thead>
+						<tr>
+							<td>CPU clock frequency(Mhz)</td>
+							<td>1633</td>
+							<td>1633</td>
+							<td>1633</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>CPU core temperature(C)</td>
+							<td>1633</td>
+							<td>1633</td>
+							<td>1633</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GPU clock frequency(Mhz)</td>
+							<td>1633</td>
+							<td>1633</td>
+							<td>1633</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GPU core temperature(C)</td>
+							<td>1633</td>
+							<td>1633</td>
+							<td>1633</td>
+							<td>-</td>
+						</tr>
+					</table>					
 			</section>
 			<section class="history-container">
 				<div class="history-title">
 					<h4>History</h4>
-					<p>Automatic snapshot every 30 seconds</p>
+					<ul class="live-btn-box">
+						<li><button class="live-cam-btn">All cameras</button></li>
+						<li><button class="live-cam-btn">Camera 1</button></li>
+						<li><button class="live-cam-btn">Camera 2</button></li>
+						<li><button class="live-cam-btn">Camera 3</button></li>
+						<li><button class="live-cam-btn">Camera 4</button></li>
+					</ul>
 				</div>
 				<hr>
-				<!-- photo slider -->
 				<div class="screenshots">
 					<i class="fas fa-chevron-left prev"></i>
 					<i class="fas fa-chevron-right next"></i>
@@ -104,7 +142,7 @@
 								<p>10:17:30 AM</p>
 							</div>
 							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="image-info">
+							<div class="screenshot-info">
 								<p>Count</p>
 								<p>10234342</p>
 							</div>
@@ -115,7 +153,7 @@
 								<p>10:17:30 AM</p>
 							</div>
 							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="image-info">
+							<div class="screenshot-info">
 								<p>Count</p>
 								<p>10234342</p>
 							</div>
@@ -126,7 +164,7 @@
 								<p>10:17:30 AM</p>
 							</div>
 							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="image-info">
+							<div class="screenshot-info">
 								<p>Count</p>
 								<p>10234342</p>
 							</div>
@@ -137,7 +175,7 @@
 								<p>10:17:30 AM</p>
 							</div>
 							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="image-info">
+							<div class="screenshot-info">
 								<p>Count</p>
 								<p>10234342</p>
 							</div>
@@ -148,7 +186,7 @@
 								<p>10:17:30 AM</p>
 							</div>
 							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="image-info">
+							<div class="screenshot-info">
 								<p>Count</p>
 								<p>10234342</p>
 							</div>
