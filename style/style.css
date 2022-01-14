@@ -48,9 +48,28 @@ hr {
 }
 #graph {
     min-width: 100%;
-    max-height: 130px;
+    max-height: 100px;
     margin: 0;
     padding: 0;
+}
+.graph-info {
+    position: relative;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.85);
+    padding-left: 20px;
+}
+.change-up:before{
+    position: absolute;
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid green;
+    left: 10px;
+    top: 28px;
 }
 .hidden {
     width: 0;
@@ -147,12 +166,12 @@ hr {
    General page header
    ====================================== */
 .page__header {
-    display: block;
     position: relative;
     width: 100%;
     height: 72px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     padding: 24px 28px;
     background: #FFFFFF;
@@ -752,6 +771,14 @@ hr {
         display: grid;
         grid-template-columns: 1fr;
     }
+    .screenshots .slider-next {
+        right: 20px;
+        font-size: 1.5em;
+    }
+    .screenshots .slider-prev {
+        left: 20px;
+        font-size: 1.5em;
+    }
     /* ========================================
         Camera page media query
     ====================================== */
@@ -787,6 +814,35 @@ hr {
         display: inline-flex;
         margin-left: auto;
     }
+    .page__header {
+        height: auto;
+        padding: 14px 18px;
+    }
+    .history-container {
+        margin: 12px;
+        padding: 16px;
+    }
+    .history-title {
+        display: block;
+    }
+    .history-title h4 {
+        padding: 0;
+    }
+    .history-title p {
+        position: relative;
+        right: 0;
+        top: 0;
+        float: left;
+        text-align: left;   
+    }
+    .screenshots .slider-next {
+        right: 0;
+        font-size: 1em;
+    }
+    .screenshots .slider-prev {
+        left: 0;
+        font-size: 1em;
+    }
     /* ========================================
         Dashboard page media query
     ====================================== */
@@ -798,5 +854,34 @@ hr {
     ====================================== */
     .camera-wrapper {
         display: block;
+        margin: 12px;
+    }
+    .panel__bar {
+        margin-bottom: 12px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    /* ========================================
+        General media query
+    ====================================== */
+    /* ========================================
+        Dashboard page media query
+    ====================================== */
+    /* ========================================
+        Camera page media query
+    ====================================== */
+    .camera-name:before {
+        width: 10px;
+        height: 10px;
+        top: 22px;
+        left: 26px;
+    }
+    .header__perfomance {
+        margin-top: 10px;
+        position: relative;
+        right: 0;
+        top: 0;
+        padding: 5px 12px;
+        width: 100%;
     }
 }
