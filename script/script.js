@@ -10,7 +10,7 @@ new Morris.Area({
         value: 264
     }, {
         date: '2/12/2022',
-        value: 244
+        value: 50
     }, {
         date: '3/12/2022',
         value: 473
@@ -19,7 +19,16 @@ new Morris.Area({
         value: 345
     }, {
         date: '5/12/2022',
-        value: 234
+        value: 20
+    }, {
+        date: '5/12/2022',
+        value: 543
+    }, {
+        date: '5/12/2022',
+        value: 23
+    }, {
+        date: '5/12/2022',
+        value: 542
     }],
     xkey: 'date',
     axes: "y",
@@ -36,6 +45,7 @@ new Morris.Area({
 $('.screenshot-wrapper').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
+    infinite: false,
     autoplay: false,
     autoplaySpeed: 2000,
     nextArrow: $('.slider-next'),
@@ -66,6 +76,7 @@ $('.screenshot-wrapper').slick({
 /* ========================================
     Dashboard page script
    ====================================== */
+
 $('#threshold-btn').click(() => {
     $('.modal-bg').addClass('modal-bg-active');
     $('.modal-threshold').css({display: 'block'});
