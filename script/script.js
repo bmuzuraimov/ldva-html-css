@@ -63,6 +63,9 @@ $('.screenshot-wrapper').slick({
 $('#threshold-btn').click(() => {
     $('.modal-bg').addClass('modal-bg-active');
 });
+$('.modal-close').click(() => {
+    $('.modal-bg').removeClass('modal-bg-active');
+});
 $('.live-btn-box').on('click', '.live-cam-btn', function() {
     $('.live-btn-box .live-cam-active').removeClass('live-cam-active');
     $(this).addClass('live-cam-active');
