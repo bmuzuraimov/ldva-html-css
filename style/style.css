@@ -36,8 +36,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-a {
+a, button {
     text-decoration: none;
+    cursor: pointer;
 }
 hr {
     margin: 12px 0;
@@ -137,7 +138,7 @@ hr {
     display: inline-block;
 }
 
-#active  {
+.ico-active  {
     color: #1890FF;
 }
 
@@ -260,7 +261,7 @@ hr {
     position: relative;
     width: 100%;
 }
-.screenshots .next {
+.screenshots .slider-next {
     position: absolute;
     top: 50%;
     right: 0;
@@ -268,7 +269,7 @@ hr {
     color: #b5b3b0;
     cursor: pointer;
 }
-.screenshots .prev {
+.screenshots .slider-prev {
     position: absolute;
     top: 50%;
     left: 0;
@@ -326,6 +327,7 @@ hr {
     text-align: right;
 }
 .screenshot-image {
+    cursor: pointer;
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -417,9 +419,6 @@ hr {
     text-align: center;
 
 }
-/* ========================================
-   Dashboard page end styling
-   ====================================== */
 
 
 /* ========================================
@@ -607,21 +606,22 @@ hr {
     stroke-width: 1;
     background-color: green;
 }
-/*.face-mask-rect {
+.face-mask-rect {
     top: 130px;
     left: 110px;
     width: 40px;
     height: 40px;
-}*/
+}
 .modal-threshold {
+    display: none;
     width: 300px;
     margin: 0;
     padding: 0;
 }
 .modal-close{
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 24px;
+    right: 24px;
     cursor: pointer;
 }
 .modal-close i{
@@ -659,6 +659,80 @@ hr {
     float: right;
     outline: none;
 }
+#threshold-form .confirm-btn {
+    float: right;
+    padding: 5px 16px;
+    background: #1890FF;
+    border: 1px solid #1890FF;
+    border-radius: 2px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    margin-left: 8px;
+}
+#threshold-form .cancel-btn{
+    float: right;
+    padding: 5px 16px;
+    background: none;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.016);
+    border-radius: 2px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.85);
+}
+.modal-history {
+    position: relative;
+    display: none;
+    width: 100vw;
+    padding: 16px;
+}
+.modal-history h6{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.85);
+}
+.camera-prev {
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    font-size: 2em;
+    color: #b5b3b0;
+    cursor: pointer;
+}
+.camera-next {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    font-size: 22px;
+    font-size: 2em;
+    color: #b5b3b0;
+    cursor: pointer;
+}
+.modal-image {
+    margin: 24px auto;
+    max-width: 60%;  
+}
+.modal-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;    
+}
+.modal-history-info{
+    width: 100%;
+    padding: 16px;
+    column-count: 2;
+}
 /* ========================================
    Responsive style
    ====================================== */
@@ -670,7 +744,14 @@ hr {
     /* ========================================
         Dashboard page media query
     ====================================== */
-
+    .live-wrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 40px;
+    }
+    .live-count {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
     /* ========================================
         Camera page media query
     ====================================== */
@@ -709,7 +790,9 @@ hr {
     /* ========================================
         Dashboard page media query
     ====================================== */
-
+    .live-wrapper{
+        grid-template-columns: 1fr;
+    }
     /* ========================================
         Camera page media query
     ====================================== */
