@@ -1,6 +1,8 @@
 /* ========================================
     General script
    ====================================== */
+
+/* == Graph object == */
 new Morris.Area({
     element: 'graph',
     data: [{
@@ -25,16 +27,19 @@ new Morris.Area({
     lineWidth: 1,
     parseTime: false,
     ykeys: ['value'],
-    labels: ['Value'],
+    labels: ['#'],
+    hideHover: true,
     lineColors: ['#3494ed'],
 });
+
+/* == Image slider == */
 $('.screenshot-wrapper').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,
-    nextArrow: $('.next'),
-    prevArrow: $('.prev'),
+    nextArrow: $('.slider-next'),
+    prevArrow: $('.slider-prev'),
     responsive: [{
         breakpoint: 1024,
         settings: {
@@ -57,24 +62,37 @@ $('.screenshot-wrapper').slick({
         }
     }],
 });
+
 /* ========================================
     Dashboard page script
    ====================================== */
 $('#threshold-btn').click(() => {
     $('.modal-bg').addClass('modal-bg-active');
+    $('.modal-threshold').css({display: 'block'});
+});
+$('.screenshot-image').click(() => {
+    $('.modal-bg').addClass('modal-bg-active');
+    $('.modal-history').css({display: 'block'});
 });
 $('.modal-close').click(() => {
     $('.modal-bg').removeClass('modal-bg-active');
+    $('.modal > *').css({display: 'none'});
 });
 $('.live-btn-box').on('click', '.live-cam-btn', function() {
     $('.live-btn-box .live-cam-active').removeClass('live-cam-active');
     $(this).addClass('live-cam-active');
 });
+
 /* ========================================
     Camera page script
    ====================================== */
+var viewportWidth = $(window).width();
+var drawingClass = '.camera-container';
+if (viewportWidth < 900) { //for smaller devices chose different relative point since grid changes
+    drawingClass = '.video-container';
+}
 if ($('.camera-container')[0]) {
-    const vid_bound = $('.camera-container')[0].getBoundingClientRect(); // get coordinates of the video
+    const vid_bound = $(drawingClass)[0].getBoundingClientRect(); // get coordinates of the video
     const m_pos = {
         x: -1,
         y: -1
@@ -96,25 +114,25 @@ if ($('.camera-container')[0]) {
     });
     $('#draw-btn').click(() => {
         const mode = $('#draw-btn').text();
-        if (mode == 'Set Region of Interest') {
+        if (mode === 'Set Region of Interest') {
             a_line = true;
             $('#draw-btn').text('Cancel');
             $('.drawing-area').removeClass('hidden');
             $('#streaming-video').css({
                 cursor: 'crosshair'
             });
-        } else if (mode == 'Cancel') {
+        } else if (mode === 'Cancel') {
             $('#draw-btn').text('Set Region of Interest');
             $('.drawing-area').addClass('hidden');
             $('#streaming-video').css({
                 cursor: 'default'
             });
-        } else if (mode == 'Reset' && regions.length == 0) {
+        } else if (mode === 'Reset' && regions.length === 0) {
             $('#draw-btn').text('Cancel');
             $(`.drawing-area line:nth-last-of-type(-n+${cur_region.length})`).remove();
             cur_region = [];
             f_point = true;
-        } else if (mode == 'Reset' && regions.length > 0) {
+        } else if (mode === 'Reset' && regions.length > 0) {
             $('#draw-btn').text('Save');
             $(`.drawing-area line:nth-last-of-type(-n+${cur_region.length})`).remove();
             cur_region = [];
@@ -130,7 +148,7 @@ if ($('.camera-container')[0]) {
     });
     $('#streaming-video').click(() => {
         const mode = $('#draw-btn').text();
-        if (mode != 'Set Region of Interest') {
+        if (mode !== 'Set Region of Interest') {
             m_pos.x = event.pageX - vid_bound.left;
             m_pos.y = event.pageY - vid_bound.top;
             m_pos.x = m_pos.x.toFixed(2);
@@ -141,7 +159,7 @@ if ($('.camera-container')[0]) {
                 regions.push(cur_region); // create new region
                 regions[regions.length - 1].push([m_pos.x, m_pos.y]);
             } else {
-                const dist = Math.sqrt(Math.pow((m_pos.x - cur_region[0][0]), 2) + Math.pow((m_pos.y - cur_region[0][1]), 2));
+                const dist = Math.sqrt(((m_pos.x - cur_region[0][0])**2) + ((m_pos.y - cur_region[0][1])**2));
                 if (dist < 10) {
                     $('#draw-btn').text('Save');
                     $('.drawing-area line').eq(l_line).attr('x2', regions[regions.length - 1][0][0]).attr('y2', regions[regions.length - 1][0][1]);
