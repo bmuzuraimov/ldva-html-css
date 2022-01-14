@@ -31,7 +31,11 @@ video::-webkit-media-controls {
 ::-webkit-scrollbar {
   display: none;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 a {
     text-decoration: none;
 }
@@ -40,6 +44,12 @@ hr {
     border: none;
     height: 1px;
     background: #BFBFBF;
+}
+#graph {
+    min-width: 100%;
+    max-height: 130px;
+    margin: 0;
+    padding: 0;
 }
 .hidden {
     width: 0;
@@ -52,8 +62,40 @@ hr {
 .orange {
     color: #FFD666;
 }
+.red {
+    color: #F5222D;
+}
 /* ========================================
-   Navbar
+    General modal
+   ====================================== */
+.modal-bg{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+.modal-bg-active{
+    visibility: visible;
+    opacity: 1;
+}  
+.modal{
+    position: relative;
+    background-color: white;
+    padding: 24px;
+    border-radius: 2px;
+    box-shadow: inset 0px -1px 0px #F0F0F0;
+} 
+/* ========================================
+   General navbar
    ====================================== */
 .menu {
     height: 100%;
@@ -74,22 +116,21 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    color:#595959;
-    
+    font-size: 16px;
+    color:#595959;  
 }
-
+.menu-ico:first-child {
+    font-size: 20px;
+}
 .menu-ico:hover {
-    transform: scale(1.06);
+    transform: scale(1.03);
     color: #146abb;
-    transition: ease-in-out 0.2s;
-   
+    transition: ease-in-out 0.2s; 
 }
 
 .menu-ico a{
     margin:0px;
     color: inherit;
-
 }
 
 .menu-ico a {
@@ -100,10 +141,11 @@ hr {
     color: #1890FF;
 }
 
+
 /* ========================================
-   Main header
+   General page header
    ====================================== */
-.main__header {
+.page__header {
     display: block;
     position: relative;
     width: 100%;
@@ -111,18 +153,21 @@ hr {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 24px 56px;
+    padding: 24px 28px;
     background: #FFFFFF;
 }
-.main__header h2 {
+.page__header h2 {
     font-weight: 500;
     font-size: 20px;
     line-height: 28px;
     text-align: center;
     letter-spacing: -0.5px;
-    color:#595959;
+    color: rgba(0, 0, 0, 0.85);
 }
-.main__header:before {
+.camera-name {
+    padding-left: 28px;
+}
+.camera-name:before {
     position: absolute;
     width: 16px;
     height: 16px;
@@ -156,19 +201,237 @@ hr {
     text-align: center;
     color: #595959;
 }
+
 /* ========================================
-   Main container
+   General history section
    ====================================== */
-.main__container {
+.history-container {
+    position: relative;
+    background: #fff;
+    margin: 24px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+.history-title p {
+    position: absolute;
+    right: 16px;
+    top: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.85);
+    float: right;
+    text-align: right;   
+}
+.history-title h4 {
+    padding: 12px 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-right: 16px;
+}
+.live-btn-box{
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.85);   
+}
+.live-btn-box li{
+    margin: 0 16px;
+    float: left;    
+}
+.live-cam-btn {
+    outline: none;
+    border: 2px solid rgba(255,255,255,.5);
+    background: none;
+    padding: 12px 0;
+}
+.live-cam-active {
+    color: #1890FF;
+    border-bottom-color: #1890FF;
+    transition: 0.3s;
+}
+.history-title {
+    display: inline-flex;
+    padding: 12px;
+}
+.screenshots {
+    position: relative;
+    width: 100%;
+}
+.screenshots .next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 2em;
+    color: #b5b3b0;
+    cursor: pointer;
+}
+.screenshots .prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 2em;
+    color: #b5b3b0;
+    cursor: pointer;
+}
+.screenshot-wrapper {
+    width: 95%;
+    height: 270px;
+    margin: 0px auto;
+    overflow: hidden;
+    padding: 10px 0px;
+}
+.screenshot {
+    width: 300px;
+    height: 280px;
+    margin: 0px 10px;
+    display: inline-block;
+    background: white;
+    outline: none;
+}
+.screenshot .date {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    column-count: 2;
+}
+.screenshot .date p:nth-child(2) {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #434343;
+    text-align: right;
+}
+.screenshot-info {
+    column-count: 2;
+}
+.screenshot-info p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #434343;
+}
+.screenshot-info p:nth-child(2){
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    color: #434343;
+    text-align: right;
+}
+.screenshot-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    align-items: center;
+}
+
+/* ========================================
+   Dashboard page styling
+   ====================================== */
+.live-view{
+    background: #fff;
+    margin: 24px;
+    padding: 16px;
+}
+.live-view > h2 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+.live-wrapper{
     display: grid;
-    grid-template-columns: 22% auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+.live-cam {
+    position: relative;
+    width: 100%;
+}
+.live-video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    align-items: center;   
+}
+.live-cam h2{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px; 
+    color: #434343; 
+    padding-left: 14px; 
+}
+.live-cam h2:before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #73D13D;
+    border-radius: 50%;
+    top: 6px;
+    left: 0px;
+    content: '';
+}
+.live-count {
+    margin: 24px;
+    display: grid;
+    grid-template-columns: 30% minmax(0, 1fr);
+    grid-gap: 24px;
+}
+.live-count-left {
+    background: #fff;
+    padding: 16px;
+}
+.live-count-right {
+    width: 100%;
+    background: #fff; 
+    padding: 16px;
+    border: none;
+    border-spacing: 0;
+}
+.live-count-right * {
+    font-size: 14px;
+    line-height: 22px;
+}
+.live-count-right td {
+    padding: 5px 10px;
+    margin: 0;
+}
+.live-count-right td i{
+    margin-right: 8px;
+}
+.live-count-right td:first-child, .live-count-right thead {
+    font-style: normal;
+    color: #434343;
+}
+.live-count-right thead td {
+    border-bottom: 1px solid #BFBFBF;
+}
+.live-count-right td:not(:first-child) {
+    text-align: center;
+
+}
+/* ========================================
+   Dashboard page end styling
+   ====================================== */
+
+
+/* ========================================
+   Camera page styling
+   ====================================== */
+.camera-wrapper {
+    display: grid;
+    grid-template-columns: 22% minmax(0, 1fr);
     grid-gap: 24px;
     margin: 24px;
     position: relative;
 }
-/* ========================================
-   Panel bar
-   ====================================== */
 .panel__bar {
     width: 100%;
     height: 620px;
@@ -243,15 +506,6 @@ hr {
     line-height: 40px;
     color: rgba(0, 0, 0, 0.85);
 }
-#graph {
-    min-width: 100%;
-    max-height: 130px;
-    margin: 0;
-    padding: 0;
-}
-/* ========================================
-   
-   ====================================== */
 .video-container {
     width: 100%;
     background: #fff;
@@ -316,6 +570,7 @@ hr {
 }
 .ico-info {
     width: 14px;
+    cursor: pointer;
 }
 .video-container video {
     margin: 0;
@@ -352,110 +607,55 @@ hr {
     stroke-width: 1;
     background-color: green;
 }
-.face-mask-rect {
+/*.face-mask-rect {
     top: 130px;
     left: 110px;
     width: 40px;
     height: 40px;
+}*/
+.modal-threshold {
+    width: 300px;
+    margin: 0;
+    padding: 0;
 }
-.history-container {
-    background: #fff;
-    margin: 24px;
-    padding: 16px;
-    margin-bottom: 24px;
+.modal-threshold h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.85);
 }
-.history-title {
-    column-count: 2;
+#threshold-form .input-box {
+    margin: 24px 0;
 }
-.history-title h2 {
-    font-size: 20px;
-    line-height: 28px;
-}
-.history-title p {
+#threshold-form .input-box label {
+    font-weight: normal;
     font-size: 14px;
     line-height: 22px;
-    color: rgba(0, 0, 0, 0.85); 
-    text-align: right;   
+    color: #000000;
 }
-/* POST SLIDER */
-
-.screenshots {
-    position: relative;
-    width: 100%;
-}
-.screenshots .next {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    font-size: 2em;
-    color: #b5b3b0;
-    cursor: pointer;
-}
-.screenshots .prev {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    font-size: 2em;
-    color: #b5b3b0;
-    cursor: pointer;
-}
-.screenshot-wrapper {
-    width: 95%;
-    height: 270px;
-    margin: 0px auto;
-    overflow: hidden;
-    padding: 10px 0px;
-}
-.screenshot {
-    width: 300px;
-    height: 280px;
-    margin: 0px 10px;
-    display: inline-block;
-    background: white;
+#threshold-form .text-input {
+    padding: 5px 12px;
+    text-align: left;
+    width: 90px;
+    float: right;
     outline: none;
 }
-.screenshot .date {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-    column-count: 2;
-}
-.screenshot .date p:nth-child(2) {
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
-	color: #434343;
-	text-align: right;
-}
-.image-info {
-    column-count: 2;
-}
-.image-info p{
-	font-style: normal;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 24px;
-	color: #434343;
-}
-.image-info p:nth-child(2){
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
-	text-align: right;
-	color: #434343;
-	text-align: right;
-}
-.screenshot-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    align-items: center;
-}
+/* ========================================
+   Responsive style
+   ====================================== */
 @media only screen and (max-width: 900px) {
-    .main__container {
+    /* ========================================
+        General media query
+    ====================================== */
+
+    /* ========================================
+        Dashboard page media query
+    ====================================== */
+
+    /* ========================================
+        Camera page media query
+    ====================================== */
+    .camera-wrapper {
         display: block;
     }
     .screenshot-wrapper {
@@ -464,6 +664,9 @@ hr {
     }
 }
 @media only screen and (max-width: 600px) {
+    /* ========================================
+        General media query
+    ====================================== */
     body {
         display: block;
     }
@@ -484,7 +687,14 @@ hr {
         display: inline-flex;
         margin-left: auto;
     }
-    .main__container {
+    /* ========================================
+        Dashboard page media query
+    ====================================== */
+
+    /* ========================================
+        Camera page media query
+    ====================================== */
+    .camera-wrapper {
         display: block;
     }
 }
