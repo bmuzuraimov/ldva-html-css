@@ -103,19 +103,14 @@ $('.live-btn-box').on('click', '.live-cam-btn', function() {
 /* ========================================
     Camera page script
    ====================================== */
-var viewportWidth = $(window).width();
-var drawingClass = '.camera-container';
-if (viewportWidth < 900) { //for smaller devices chose different relative point since grid changes
-    drawingClass = '.video-container';
-}
 if ($('.camera-container')[0]) {
-    const vid_bound = $(drawingClass)[0].getBoundingClientRect(); // get coordinates of the video
+    const vid_bound = $('#streaming-video')[0].getBoundingClientRect(); // get coordinates of the video
     const m_pos = {
         x: -1,
         y: -1
     }; // cursor coordinates relatively to the video frame
     const l_line = $('.drawing-area line').length - 1; // index of the last line
-    let a_line = true; // is line follow mouse
+    let a_line = true; // is line following mouse
     let f_point = true; // remember first point to check if distance with last point is close
     const regions = new Array(); // all regions
     let cur_region = new Array(); // current region coordinates
@@ -126,7 +121,6 @@ if ($('.camera-container')[0]) {
             if (!f_point) {
                 $('.drawing-area line').eq(l_line).attr('x2', m_pos.x).attr('y2', m_pos.y);
             }
-            $('#cursor').attr('cx', m_pos.x).attr('cy', m_pos.y);
         }
     });
     $('#draw-btn').click(() => {
