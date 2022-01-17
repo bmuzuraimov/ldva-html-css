@@ -1,12 +1,12 @@
 /* ========================================
     Import fonts
    ====================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-
-
 /* ========================================
     General style
    ====================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ html, body {
     height: 100%;
     width: 100%;
 }
-body {
+.container {
     position: relative;
     background: #F4F4F4;
     display: grid;
@@ -29,12 +29,11 @@ video::-webkit-media-controls {
     display: none;
 }
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 a, button {
     text-decoration: none;
@@ -60,22 +59,22 @@ hr {
     color: rgba(0, 0, 0, 0.85);
     padding-left: 20px;
 }
-.change-down:before{
+.change-down:before {
     position: absolute;
     content: '';
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid red;
     left: 150px;
     top: 30px;
 }
-.change-up:before{
+.change-up:before {
     position: absolute;
     content: '';
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 5px solid green;
@@ -99,7 +98,8 @@ hr {
 /* ========================================
     General modal
    ====================================== */
-.modal-bg{
+
+.modal-bg {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -114,20 +114,21 @@ hr {
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
 }
-.modal-bg-active{
+.modal-bg-active {
     visibility: visible;
     opacity: 1;
-}  
-.modal{
+}
+.modal {
     position: relative;
     background-color: white;
     padding: 24px;
     border-radius: 2px;
     box-shadow: inset 0px -1px 0px #F0F0F0;
-} 
+}
 /* ========================================
    General navbar
    ====================================== */
+
 .menu {
     height: 100%;
     background: #fff;
@@ -148,7 +149,7 @@ hr {
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    color:#595959;  
+    color: #595959;
 }
 .menu-ico:first-child {
     font-size: 20px;
@@ -156,26 +157,22 @@ hr {
 .menu-ico:hover {
     transform: scale(1.03);
     color: #146abb;
-    transition: ease-in-out 0.2s; 
+    transition: ease-in-out 0.2s;
 }
-
-.menu-ico a{
-    margin:0px;
+.menu-ico a {
+    margin: 0px;
     color: inherit;
 }
-
 .menu-ico a {
     display: inline-block;
 }
-
-.ico-active  {
+.ico-active {
     color: #1890FF;
 }
-
-
 /* ========================================
    General page header
    ====================================== */
+
 .page__header {
     position: relative;
     width: 100%;
@@ -232,10 +229,10 @@ hr {
     text-align: center;
     color: #595959;
 }
-
 /* ========================================
    General history section
    ====================================== */
+
 .history-container {
     position: relative;
     background: #fff;
@@ -251,7 +248,7 @@ hr {
     line-height: 22px;
     color: rgba(0, 0, 0, 0.85);
     float: right;
-    text-align: right;   
+    text-align: right;
 }
 .history-title h4 {
     padding: 12px 0;
@@ -260,21 +257,21 @@ hr {
     line-height: 28px;
     margin-right: 16px;
 }
-.live-btn-box{
+.live-btn-box {
     list-style-type: none;
     font-size: 14px;
     line-height: 22px;
     display: flex;
     align-items: center;
-    color: rgba(0, 0, 0, 0.85);   
+    color: rgba(0, 0, 0, 0.85);
 }
-.live-btn-box li{
+.live-btn-box li {
     margin: 0 16px;
-    float: left;    
+    float: left;
 }
 .live-cam-btn {
     outline: none;
-    border: 2px solid rgba(255,255,255,.5);
+    border: 2px solid rgba(255, 255, 255, .5);
     background: none;
     padding: 12px 0;
 }
@@ -340,14 +337,14 @@ hr {
 .screenshot-info {
     column-count: 2;
 }
-.screenshot-info p{
+.screenshot-info p {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     color: #434343;
 }
-.screenshot-info p:nth-child(2){
+.screenshot-info p:nth-child(2) {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -363,22 +360,59 @@ hr {
     object-fit: cover;
     align-items: center;
 }
+/* ========================================
+    Login page style
+   ====================================== */
 
+.login-container {
+    width: 100%;
+    height: 100%;
+    background: #F0F2F5;
+    padding-top: 95px;
+}
+.login-form {
+    width: 360px;
+    position: relative
+    padding: 0;
+    margin: 0 auto;
+}
+.login-header h2 {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.45);  
+}
+.login-form-title {
+    width: 100%;
+    padding: 7px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+.login-form-title h4 {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #1890FF;
+    border: 1px solid blue;
+}
 /* ========================================
    Dashboard page styling
    ====================================== */
-.live-view{
+
+.live-view {
     background: #fff;
     margin: 24px;
     padding: 16px;
 }
-.live-view > h2 {
+.live-view>h2 {
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
     color: #000000;
 }
-.live-wrapper{
+.live-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
@@ -391,14 +425,14 @@ hr {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    align-items: center;   
+    align-items: center;
 }
-.live-cam h2{
+.live-cam h2 {
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px; 
-    color: #434343; 
-    padding-left: 14px; 
+    line-height: 24px;
+    color: #434343;
+    padding-left: 14px;
 }
 .live-cam h2:before {
     position: absolute;
@@ -422,7 +456,7 @@ hr {
 }
 .live-count-right {
     width: 100%;
-    background: #fff; 
+    background: #fff;
     padding: 16px;
     border: none;
     border-spacing: 0;
@@ -435,7 +469,7 @@ hr {
     padding: 5px 10px;
     margin: 0;
 }
-.live-count-right td i{
+.live-count-right td i {
     margin-right: 8px;
 }
 .live-count-right td:first-child, .live-count-right thead {
@@ -447,13 +481,11 @@ hr {
 }
 .live-count-right td:not(:first-child) {
     text-align: center;
-
 }
-
-
 /* ========================================
    Camera page styling
    ====================================== */
+
 .camera-wrapper {
     display: grid;
     grid-template-columns: 22% minmax(0, 1fr);
@@ -503,7 +535,7 @@ hr {
     cursor: pointer;
 }
 .table__col2 button:hover {
-	color: #5cb6ff;
+    color: #5cb6ff;
 }
 .panel__btn {
     width: 100%;
@@ -631,7 +663,7 @@ hr {
     pointer-events: none;
 }
 .drawing-area line {
-	position: relative;
+    position: relative;
     z-index: 999;
     stroke: rgb(0, 255, 0);
     stroke-width: 2;
@@ -654,13 +686,13 @@ hr {
     margin: 0;
     padding: 0;
 }
-.modal-close{
+.modal-close {
     position: absolute;
     top: 24px;
     right: 24px;
     cursor: pointer;
 }
-.modal-close i{
+.modal-close i {
     font-size: 24px;
     color: rgba(0, 0, 0, 0.45);
 }
@@ -709,7 +741,7 @@ hr {
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
     margin-left: 8px;
 }
-#threshold-form .cancel-btn{
+#threshold-form .cancel-btn {
     float: right;
     padding: 5px 16px;
     background: none;
@@ -729,7 +761,7 @@ hr {
     width: 100vw;
     padding: 16px;
 }
-.modal-history h6{
+.modal-history h6 {
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
@@ -756,15 +788,15 @@ hr {
 }
 .modal-image {
     margin: 24px auto;
-    max-width: 60%;  
+    max-width: 60%;
 }
 .modal-image img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    object-position: center;    
+    object-position: center;
 }
-.modal-history-info{
+.modal-history-info {
     width: 100%;
     padding: 16px;
     column-count: 2;
@@ -772,15 +804,15 @@ hr {
 /* ========================================
    Responsive style
    ====================================== */
+
 @media only screen and (max-width: 900px) {
     /* ========================================
         General media query
     ====================================== */
-
     /* ========================================
         Dashboard page media query
     ====================================== */
-    .live-wrapper{
+    .live-wrapper {
         grid-template-columns: 1fr 1fr;
         grid-gap: 40px;
     }
@@ -827,7 +859,7 @@ hr {
         margin: 0;
         padding: 8px;
     }
-    .menu ul{
+    .menu ul {
         display: inline-flex;
         margin-left: auto;
     }
@@ -850,7 +882,7 @@ hr {
         right: 0;
         top: 0;
         float: left;
-        text-align: left;   
+        text-align: left;
     }
     .screenshots .slider-next {
         right: 0;
@@ -863,17 +895,17 @@ hr {
     /* ========================================
         Dashboard page media query
     ====================================== */
-    .live-view{
+    .live-view {
         margin: 14px;
     }
-    .live-wrapper{
+    .live-wrapper {
         grid-template-columns: 1fr;
     }
     .live-count {
         margin: 14px;
     }
-    .live-btn-box li{
-        margin: 0 10px;   
+    .live-btn-box li {
+        margin: 0 10px;
     }
     /* ========================================
         Camera page media query
@@ -893,8 +925,8 @@ hr {
     /* ========================================
         Dashboard page media query
     ====================================== */
-    .live-btn-box li{
-        margin: 0 5px;   
+    .live-btn-box li {
+        margin: 0 5px;
     }
     /* ========================================
         Camera page media query
