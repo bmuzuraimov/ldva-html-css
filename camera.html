@@ -10,159 +10,161 @@
 		<title>Long range</title>
 	</head>
 	<body>
-		<nav class="menu">
-			<a href="#navbar" class="menu__logo"><img src="images/icons/ai-academy.svg" alt="logo"></a>
-			<ul>
-				<li class="menu-ico">
-					<a href="./index.html"><i class="fa fa-home"></i></a>
-				</li>
-				<li class="menu-ico">
-					<a href="./camera.html"><i class="fas fa-camera ico-active" ></i> 1</a>
-				</li>
-				<li class="menu-ico">
-					<a href="./camera.html"><i class="fas fa-camera" ></i> 2</a>
-				</li>
-				<li class="menu-ico">
-					<a href="./camera.html"><i class="fas fa-camera"  ></i> 3</a>
-				</li>
-				<li class="menu-ico">
-					<a href="./camera.html"><i class="fas fa-camera" ></i> 4</a>
-				</li>
-			</ul>
-		</nav>
-		<article class="camera-container">
-			<header class="page__header">
-				<h2 class="camera-name">Camera 1</h2>
-				<ul class="header__perfomance">
-					<li>GPU: <span class="green">50&#176;</span> 1633Mhz</li>&emsp;
-					<li>CPU: <span class="orange">68&#176;</span> 4933Mhz</li>
+		<div class="container">
+			<nav class="menu">
+				<a href="#navbar" class="menu__logo"><img src="images/icons/ai-academy.svg" alt="logo"></a>
+				<ul>
+					<li class="menu-ico">
+						<a href="./index.html"><i class="fa fa-home"></i></a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera ico-active" ></i> 1</a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera" ></i> 2</a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera"  ></i> 3</a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera" ></i> 4</a>
+					</li>
 				</ul>
-			</header>
-			<section class="camera-wrapper">
-				<div class="panel__bar">
-					<h6>Count</h6>
+			</nav>
+			<article class="camera-container">
+				<header class="page__header">
+					<h2 class="camera-name">Camera 1</h2>
+					<ul class="header__perfomance">
+						<li>GPU: <span class="green">50&#176;</span> 1633Mhz</li>&emsp;
+						<li>CPU: <span class="orange">68&#176;</span> 4933Mhz</li>
+					</ul>
+				</header>
+				<section class="camera-wrapper">
+					<div class="panel__bar">
+						<h6>Count</h6>
+						<hr>
+						<table class="panel-table">
+							<tr>
+								<td class="table__col1">With occlusion</td>
+								<td class="table__col2" id="debug1">2610</td>
+							</tr>
+							<tr>
+								<td class="table__col1">Tolerated Threshold</td>
+								<td class="table__col2"><button id="threshold-btn">Change</button>0.5</td>
+							</tr>
+							<tr>
+								<td class="table__col1">Total detection</td>
+								<td class="table__col2" id="debug2">2530</td>
+							</tr>
+							<tr>
+								<td class="table__col1">Detection inside</td>
+								<td class="table__col2">810</td>
+							</tr>
+							<tr>
+								<td class="table__col1">Detection outside</td>
+								<td class="table__col2">1733</td>
+							</tr>
+						</table>
+						<hr>
+						<button class="panel__btn" id="draw-btn">Set Region of Interest</button>
+						<table class="panel-table">
+							<tr>
+								<td class="table__col1">Live count</td>
+								<td class="table__col2"><img src="images/icons/info.svg" class="ico-info" width="32" alt="logo"></td>
+							</tr>
+						</table>
+						<h2>4600</h2>
+						<div id="graph"></div>
+						<div class="graph-info">
+							<p>Hourly Average 3500</p>
+							<p>Hourly Change 12%</p>
+						</div>
+					</div>
+					<div class="video-container">
+						<h6 class="video-title">Live</h6>
+						<hr>
+						<div class="video_face-mask">
+							<label for="face-mask">Face mask</label>
+							<img src="images/icons/info.svg" class="ico-info" width="32" alt="logo">
+							<input type="checkbox" id="face-mask" class="check-box">
+						</div>
+						<div class="drawing-wrapper">
+							<video controls autoplay="true" src="crowded-people.mp4" id="streaming-video"></video>
+							<svg class="drawing-area hidden" width="100%" height="100%"></svg>
+							<div class="face-mask-rect hidden"></div>						
+						</div>
+					</div>
+				</section>
+				<section class="history-container">
+					<div class="history-title">
+						<h4>History</h4>
+						<p>Automatic snapshot every 30 seconds</p>
+					</div>
 					<hr>
-					<table class="panel-table">
-						<tr>
-							<td class="table__col1">With occlusion</td>
-							<td class="table__col2" id="debug1">2610</td>
-						</tr>
-						<tr>
-							<td class="table__col1">Tolerated Threshold</td>
-							<td class="table__col2"><button id="threshold-btn">Change</button>0.5</td>
-						</tr>
-						<tr>
-							<td class="table__col1">Total detection</td>
-							<td class="table__col2" id="debug2">2530</td>
-						</tr>
-						<tr>
-							<td class="table__col1">Detection inside</td>
-							<td class="table__col2">810</td>
-						</tr>
-						<tr>
-							<td class="table__col1">Detection outside</td>
-							<td class="table__col2">1733</td>
-						</tr>
-					</table>
-					<hr>
-					<button class="panel__btn" id="draw-btn">Set Region of Interest</button>
-					<table class="panel-table">
-						<tr>
-							<td class="table__col1">Live count</td>
-							<td class="table__col2"><img src="images/icons/info.svg" class="ico-info" width="32" alt="logo"></td>
-						</tr>
-					</table>
-					<h2>4600</h2>
-					<div id="graph"></div>
-					<div class="graph-info">
-						<p>Hourly Average 3500</p>
-						<p>Hourly Change 12%</p>
-					</div>
-				</div>
-				<div class="video-container">
-					<h6 class="video-title">Live</h6>
-					<hr>
-					<div class="video_face-mask">
-						<label for="face-mask">Face mask</label>
-						<img src="images/icons/info.svg" class="ico-info" width="32" alt="logo">
-						<input type="checkbox" id="face-mask" class="check-box">
-					</div>
-					<div class="drawing-wrapper">
-						<video controls autoplay="true" src="crowded-people.mp4" id="streaming-video"></video>
-						<svg class="drawing-area hidden" width="100%" height="100%"></svg>
-						<div class="face-mask-rect hidden"></div>						
-					</div>
-				</div>
-			</section>
-			<section class="history-container">
-				<div class="history-title">
-					<h4>History</h4>
-					<p>Automatic snapshot every 30 seconds</p>
-				</div>
-				<hr>
-				<div class="screenshots">
-					<i class="fas fa-chevron-left slider-prev"></i>
-					<i class="fas fa-chevron-right slider-next"></i>
-					<div class="screenshot-wrapper">
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
+					<div class="screenshots">
+						<i class="fas fa-chevron-left slider-prev"></i>
+						<i class="fas fa-chevron-right slider-next"></i>
+						<div class="screenshot-wrapper">
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
-						</div>
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
-						</div>
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
-							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
-							</div>
-						</div>
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
-							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
-							</div>
-						</div>
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
-							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-		</article>
+				</section>
+			</article>
+		</div>
 		<!--Modal-bg-->
 		<div class="modal-bg">
 			<div class="modal">
