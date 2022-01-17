@@ -9,197 +9,199 @@
 		<title>Long range</title>
 	</head>
 	<body>
-		<nav class="menu">
-			<a href="#navbar" class="menu__logo"><img src="images/icons/ai-academy.svg" alt="logo"></a>
-			<ul>
-				<li class="menu-ico">
-					<a href="./index.html"><i class="fa fa-home ico-active"></i></a>
-				</li>
-				<li class="menu-ico">
-					<a href="./camera.html"><i class="fas fa-camera " ></i> 1</a>
-				</li>
-				<li class="menu-ico">
-					<a href="./camera.html"><i class="fas fa-camera" ></i> 2</a>
-				</li>
-				<li class="menu-ico">
-					<a href="./camera.html"><i class="fas fa-camera"  ></i> 3</a>
-				</li>
-				<li class="menu-ico">
-					<a href="./camera.html"><i class="fas fa-camera" ></i> 4</a>
-				</li>
-			</ul>
-		</nav>
-		<article class="dashboard-container">
-			<header class="page__header">
-				<h2>Dashboard</h2>
-			</header>
-			<section class="live-view">
-				<h2>Live view</h2>
-				<hr>
-				<div class="live-wrapper">
-					<div class="live-cam">
-						<h2>Camera 1</h2>
-						<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
-						<div class="screenshot-info">
-							<p>Count</p>
-							<p>10234342</p>
+		<div class="container">
+			<nav class="menu">
+				<a href="#navbar" class="menu__logo"><img src="images/icons/ai-academy.svg" alt="logo"></a>
+				<ul>
+					<li class="menu-ico">
+						<a href="./index.html"><i class="fa fa-home ico-active"></i></a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera " ></i> 1</a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera" ></i> 2</a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera"  ></i> 3</a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera" ></i> 4</a>
+					</li>
+				</ul>
+			</nav>
+			<article class="dashboard-container">
+				<header class="page__header">
+					<h2>Dashboard</h2>
+				</header>
+				<section class="live-view">
+					<h2>Live view</h2>
+					<hr>
+					<div class="live-wrapper">
+						<div class="live-cam">
+							<h2>Camera 1</h2>
+							<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="live-cam">
+							<h2>Camera 2</h2>
+							<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="live-cam">
+							<h2>Camera 3</h2>
+							<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="live-cam">
+							<h2>Camera 4</h2>
+							<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
 						</div>
 					</div>
-					<div class="live-cam">
-						<h2>Camera 2</h2>
-						<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
-						<div class="screenshot-info">
-							<p>Count</p>
-							<p>10234342</p>
+				</section>
+				<section class="live-count">
+						<div class="live-count-left">
+							<table class="panel-table">
+								<tr>
+									<td class="table__col1">Live count</td>
+									<td class="table__col2"><img src="images/icons/info.svg" class="ico-info" width="32" alt="logo"></td>
+								</tr>
+							</table>
+							<h2>4600</h2>
+							<div id="graph"></div>
+							<div class="graph-info">
+								<p>Hourly Average 3500</p>
+								<p class="change-down">Hourly Change 12%</p>
+								<!-- change-up & change-down -->
+							</div>
 						</div>
-					</div>
-					<div class="live-cam">
-						<h2>Camera 3</h2>
-						<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
-						<div class="screenshot-info">
-							<p>Count</p>
-							<p>10234342</p>
-						</div>
-					</div>
-					<div class="live-cam">
-						<h2>Camera 4</h2>
-						<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
-						<div class="screenshot-info">
-							<p>Count</p>
-							<p>10234342</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="live-count">
-					<div class="live-count-left">
-						<table class="panel-table">
+						<table class="live-count-right">
+							<thead>
+								<td>System Status</td>
+								<td><i class="fas fa-circle fa-sm green"></i>Camera 1</td>
+								<td><i class="fas fa-circle fa-sm green"></i>Camera 2</td>
+								<td><i class="fas fa-circle fa-sm green"></i>Camera 3</td>
+								<td><i class="fas fa-circle fa-sm red"></i>Camera 4</td>
+							</thead>
 							<tr>
-								<td class="table__col1">Live count</td>
-								<td class="table__col2"><img src="images/icons/info.svg" class="ico-info" width="32" alt="logo"></td>
+								<td>CPU clock frequency(Mhz)</td>
+								<td>1633</td>
+								<td>1633</td>
+								<td>1633</td>
+								<td>-</td>
 							</tr>
-						</table>
-						<h2>4600</h2>
-						<div id="graph"></div>
-						<div class="graph-info">
-							<p>Hourly Average 3500</p>
-							<p class="change-down">Hourly Change 12%</p>
-							<!-- change-up & change-down -->
-						</div>
+							<tr>
+								<td>CPU core temperature(C)</td>
+								<td>1633</td>
+								<td>1633</td>
+								<td>1633</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>GPU clock frequency(Mhz)</td>
+								<td>1633</td>
+								<td>1633</td>
+								<td>1633</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>GPU core temperature(C)</td>
+								<td>1633</td>
+								<td>1633</td>
+								<td>1633</td>
+								<td>-</td>
+							</tr>
+						</table>					
+				</section>
+				<section class="history-container">
+					<div class="history-title">
+						<h4>History</h4>
+						<ul class="live-btn-box">
+							<li><button class="live-cam-btn live-cam-active">All cameras</button></li>
+							<li><button class="live-cam-btn">Camera 1</button></li>
+							<li><button class="live-cam-btn">Camera 2</button></li>
+							<li><button class="live-cam-btn">Camera 3</button></li>
+							<li><button class="live-cam-btn">Camera 4</button></li>
+						</ul>
 					</div>
-					<table class="live-count-right">
-						<thead>
-							<td>System Status</td>
-							<td><i class="fas fa-circle fa-sm green"></i>Camera 1</td>
-							<td><i class="fas fa-circle fa-sm green"></i>Camera 2</td>
-							<td><i class="fas fa-circle fa-sm green"></i>Camera 3</td>
-							<td><i class="fas fa-circle fa-sm red"></i>Camera 4</td>
-						</thead>
-						<tr>
-							<td>CPU clock frequency(Mhz)</td>
-							<td>1633</td>
-							<td>1633</td>
-							<td>1633</td>
-							<td>-</td>
-						</tr>
-						<tr>
-							<td>CPU core temperature(C)</td>
-							<td>1633</td>
-							<td>1633</td>
-							<td>1633</td>
-							<td>-</td>
-						</tr>
-						<tr>
-							<td>GPU clock frequency(Mhz)</td>
-							<td>1633</td>
-							<td>1633</td>
-							<td>1633</td>
-							<td>-</td>
-						</tr>
-						<tr>
-							<td>GPU core temperature(C)</td>
-							<td>1633</td>
-							<td>1633</td>
-							<td>1633</td>
-							<td>-</td>
-						</tr>
-					</table>					
-			</section>
-			<section class="history-container">
-				<div class="history-title">
-					<h4>History</h4>
-					<ul class="live-btn-box">
-						<li><button class="live-cam-btn live-cam-active">All cameras</button></li>
-						<li><button class="live-cam-btn">Camera 1</button></li>
-						<li><button class="live-cam-btn">Camera 2</button></li>
-						<li><button class="live-cam-btn">Camera 3</button></li>
-						<li><button class="live-cam-btn">Camera 4</button></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="screenshots">
-					<i class="fas fa-chevron-left slider-prev"></i>
-					<i class="fas fa-chevron-right slider-next"></i>
-					<div class="screenshot-wrapper">
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
+					<hr>
+					<div class="screenshots">
+						<i class="fas fa-chevron-left slider-prev"></i>
+						<i class="fas fa-chevron-right slider-next"></i>
+						<div class="screenshot-wrapper">
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
-						</div>
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
-						</div>
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
-							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
-							</div>
-						</div>
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
-							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
-							</div>
-						</div>
-						<div class="screenshot">
-							<div class="date">
-								<p>January 28, 2021</p>
-								<p>10:17:30 AM</p>
-							</div>
-							<img src="images/screenshot.png" class="screenshot-image">
-							<div class="screenshot-info">
-								<p>Count</p>
-								<p>10234342</p>
+							<div class="screenshot">
+								<div class="date">
+									<p>January 28, 2021</p>
+									<p>10:17:30 AM</p>
+								</div>
+								<img src="images/screenshot.png" class="screenshot-image">
+								<div class="screenshot-info">
+									<p>Count</p>
+									<p>10234342</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-		</article>
+				</section>
+			</article>
+		</div>
 		<!--Modal-bg-->
 		<div class="modal-bg">
 			<div class="modal">
