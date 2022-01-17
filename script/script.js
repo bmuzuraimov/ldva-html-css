@@ -1,7 +1,6 @@
 /* ========================================
     General script
    ====================================== */
-
 /* == Graph object == */
 new Morris.Area({
     element: 'graph',
@@ -72,7 +71,14 @@ $('.screenshot-wrapper').slick({
         }
     }],
 });
-
+$('form').submit(function(){
+    return false;
+});
+$("#threshold-confirm").click(function(){
+    $.post($('#threshold-form').attr('action'), $('#threshold-form :input').serializeArray(), function(response){
+      $('#threshold-confirm').html("Saved");
+    });
+});
 /* ========================================
     Dashboard page script
    ====================================== */
@@ -81,7 +87,7 @@ $('#threshold-btn').click(() => {
     $('.modal-bg').addClass('modal-bg-active');
     $('.modal-threshold').css({display: 'block'});
 });
-$('.screenshot-image').click(() => {
+$('img.screenshot-image').click(() => {
     $('.modal-bg').addClass('modal-bg-active');
     $('.modal-history').css({display: 'block'});
 });
@@ -149,7 +155,11 @@ if ($('.camera-container')[0]) {
             cur_region = [];
             f_point = true;
         } else {
-            alert('Image Saved');
+            Swal.fire({
+              title: 'Image saved!',
+              icon: 'success',
+              confirmButtonColor: '#1890FF',
+            });
             $('#draw-btn').text('Set Region of Interest');
             $('#streaming-video').css({
                 cursor: 'default'
