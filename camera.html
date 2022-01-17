@@ -45,7 +45,7 @@
 					<table class="panel-table">
 						<tr>
 							<td class="table__col1">With occlusion</td>
-							<td class="table__col2">2610</td>
+							<td class="table__col2" id="debug1">2610</td>
 						</tr>
 						<tr>
 							<td class="table__col1">Tolerated Threshold</td>
@@ -53,7 +53,7 @@
 						</tr>
 						<tr>
 							<td class="table__col1">Total detection</td>
-							<td class="table__col2">2530</td>
+							<td class="table__col2" id="debug2">2530</td>
 						</tr>
 						<tr>
 							<td class="table__col1">Detection inside</td>
@@ -87,9 +87,11 @@
 						<img src="images/icons/info.svg" class="ico-info" width="32" alt="logo">
 						<input type="checkbox" id="face-mask" class="check-box">
 					</div>
-					<video controls autoplay="true" src="crowded-people.mp4" id="streaming-video"></video>
-					<div class="face-mask-rect hidden"></div>
-					<svg class="drawing-area hidden" width="100%" height="100%"></svg>
+					<div class="drawing-wrapper">
+						<video controls autoplay="true" src="crowded-people.mp4" id="streaming-video"></video>
+						<svg class="drawing-area hidden" width="100%" height="100%"></svg>
+						<div class="face-mask-rect hidden"></div>						
+					</div>
 				</div>
 			</section>
 			<section class="history-container">
