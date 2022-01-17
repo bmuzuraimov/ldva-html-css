@@ -60,6 +60,17 @@ hr {
     color: rgba(0, 0, 0, 0.85);
     padding-left: 20px;
 }
+.change-down:before{
+    position: absolute;
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid red;
+    left: 150px;
+    top: 30px;
+}
 .change-up:before{
     position: absolute;
     content: '';
@@ -68,8 +79,8 @@ hr {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 5px solid green;
-    left: 10px;
-    top: 28px;
+    left: 150px;
+    top: 30px;
 }
 .hidden {
     width: 0;
@@ -497,7 +508,7 @@ hr {
 .panel__btn {
     width: 100%;
     height: 40px;
-    margin-bottom: 65px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -819,8 +830,8 @@ hr {
         padding: 14px 18px;
     }
     .history-container {
-        margin: 12px;
-        padding: 16px;
+        width: 100%;
+        margin: 14px;
     }
     .history-title {
         display: block;
@@ -846,8 +857,17 @@ hr {
     /* ========================================
         Dashboard page media query
     ====================================== */
+    .live-view{
+        margin: 14px;
+    }
     .live-wrapper{
         grid-template-columns: 1fr;
+    }
+    .live-count {
+        margin: 14px;
+    }
+    .live-btn-box li{
+        margin: 0 10px;   
     }
     /* ========================================
         Camera page media query
@@ -867,6 +887,9 @@ hr {
     /* ========================================
         Dashboard page media query
     ====================================== */
+    .live-btn-box li{
+        margin: 0 5px;   
+    }
     /* ========================================
         Camera page media query
     ====================================== */
