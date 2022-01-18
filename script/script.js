@@ -30,8 +30,8 @@ new Morris.Area({
         value: 542
     }],
     xkey: 'date',
-    axes: "y",
-    axes: "x",
+    axes: 'y',
+    axes: 'x',
     lineWidth: 1,
     parseTime: false,
     ykeys: ['value'],
@@ -45,8 +45,7 @@ $('.screenshot-wrapper').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     infinite: false,
-    autoplay: false,
-    autoplaySpeed: 2000,
+    lazyLoad: 'ondemand',
     nextArrow: $('.slider-next'),
     prevArrow: $('.slider-prev'),
     responsive: [{
@@ -71,22 +70,7 @@ $('.screenshot-wrapper').slick({
         }
     }],
 });
-$('form').submit(function(){
-    return false;
-});
-$("#threshold-confirm").click(function(){
-    $.post($('#threshold-form').attr('action'), $('#threshold-form :input').serializeArray(), function(response){
-      $('#threshold-confirm').html("Saved");
-    });
-});
-/* ========================================
-    Dashboard page script
-   ====================================== */
-
-$('#threshold-btn').click(() => {
-    $('.modal-bg').addClass('modal-bg-active');
-    $('.modal-threshold').css({display: 'block'});
-});
+//Modal popups
 $('img.screenshot-image').click(() => {
     $('.modal-bg').addClass('modal-bg-active');
     $('.modal-history').css({display: 'block'});
@@ -95,25 +79,80 @@ $('.modal-close').click(() => {
     $('.modal-bg').removeClass('modal-bg-active');
     $('.modal > *').css({display: 'none'});
 });
-$('.live-btn-box').on('click', '.live-cam-btn', function() {
-    $('.live-btn-box .live-cam-active').removeClass('live-cam-active');
-    $(this).addClass('live-cam-active');
+//Don't let submit forms, instead handle here with response
+$('form').submit(function(){
+    return false;
 });
-
+/* ========================================
+    Dashboard page script
+   ====================================== */
+if ($('.dashboard-container')[0]) { //if dashboard class exists
+    $('.live-btn-box').on('click', '.live-cam-btn', function() {
+        $('.live-btn-box .live-cam-active').removeClass('live-cam-active');
+        $(this).addClass('live-cam-active');
+        const camera = $(this).attr('value');
+        switch(camera) {
+          case 'All cameras':
+            // if All cameras. Don't forget to refresh slick slider
+            // $('#slick-slider').slick('refresh');
+            alert('History of all cameras');
+            break;
+          case 'Camera 1':
+            // if Camera 1. Don't forget to refresh slick slider
+            // $('#slick-slider').slick('refresh');
+            alert('Screenshots of camera 1');
+            break;
+          case 'Camera 2':
+            // if Camera 2. Don't forget to refresh slick slider
+            // $('#slick-slider').slick('refresh');
+            alert('Screenshots of camera 2');
+            break;
+          case 'Camera 3':
+            // if Camera 3. Don't forget to refresh slick slider
+            // $('#slick-slider').slick('refresh');
+            alert('Screenshots of camera 3');
+            break;
+          case 'Camera 4':
+            // if Camera 4. Don't forget to refresh slick slider
+            // $('#slick-slider').slick('refresh');
+            alert('Screenshots of camera 4');
+            break;
+          default:
+            alert('Error occured! Please try again.');
+        }
+    });
+}
 /* ========================================
     Camera page script
    ====================================== */
-if ($('.camera-container')[0]) {
-    const vid_bound = $('#streaming-video')[0].getBoundingClientRect(); // get coordinates of the video
-    const m_pos = {
+if ($('.camera-container')[0]) { //if camera class exists
+    // get video coordinates to draw relative shapes on top layer (.drawing-area)
+    const vid_bound = $('#streaming-video')[0].getBoundingClientRect();
+    const m_pos = { // object for cursor coordinates
         x: -1,
         y: -1
-    }; // cursor coordinates relatively to the video frame
+    };
     const l_line = $('.drawing-area line').length - 1; // index of the last line
     let a_line = true; // is line following mouse
     let f_point = true; // remember first point to check if distance with last point is close
     const regions = new Array(); // all regions
-    let cur_region = new Array(); // current region coordinates
+    let cur_region = new Array(); // current region coordinates (when closed add to 'regions' array)
+    $('#face-mask').change(function() {
+        if(this.checked) {
+            // face mask checkbox checked
+        }else{
+            // face mask checkbox unchecked
+        }        
+    });
+    $('#threshold-confirm').click(function(){ //Threshold post request
+        $.post($('#threshold-form').attr('action'), $('#threshold-form :input').serializeArray(), function(response){
+          $('#threshold-confirm').html('Saved');
+        });
+    });
+    $('#threshold-btn').click(() => {
+        $('.modal-bg').addClass('modal-bg-active');
+        $('.modal-threshold').css({display: 'block'});
+    });
     $('#streaming-video').mousemove(() => {
         m_pos.x = event.pageX - vid_bound.left;
         m_pos.y = event.pageY - vid_bound.top;
@@ -148,7 +187,7 @@ if ($('.camera-container')[0]) {
             $(`.drawing-area line:nth-last-of-type(-n+${cur_region.length})`).remove();
             cur_region = [];
             f_point = true;
-        } else {
+        } else if(mode === 'Save'){
             Swal.fire({
               title: 'Image saved!',
               icon: 'success',
