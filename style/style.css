@@ -43,6 +43,9 @@ hr {
     height: 1px;
     background: #BFBFBF;
 }
+li {
+    list-style-type: none;
+}
 #graph {
     min-width: 100%;
     max-height: 100px;
@@ -169,7 +172,6 @@ hr {
 /* ========================================
    General page header
    ====================================== */
-
 .page__header {
     position: relative;
     width: 100%;
@@ -216,7 +218,6 @@ hr {
     background: #F5F5F5;
     border: none;
     border-radius: 5px;
-    list-style-type: none;
 }
 .header__perfomance li {
     font-weight: 500;
@@ -228,8 +229,7 @@ hr {
 /* ========================================
    General history section
    ====================================== */
-
-.history-container {
+.history-wrapper {
     position: relative;
     background: #fff;
     margin: 24px;
@@ -254,7 +254,6 @@ hr {
     margin-right: 16px;
 }
 .live-btn-box {
-    list-style-type: none;
     font-size: 14px;
     line-height: 22px;
     display: flex;
@@ -281,7 +280,6 @@ hr {
     display: flex;
     column-gap: 8px;
 }
-
 .history-title div {
     flex:1;
 }
@@ -290,7 +288,6 @@ hr {
     position: relative;
     padding:8px;
 }
-
 .history-title-right p {
  
     position: absolute;
@@ -382,7 +379,6 @@ hr {
 /* ========================================
     Login page style
    ====================================== */
-
 .login-container {
     width: 100%;
     height: 100%;
@@ -463,7 +459,6 @@ hr {
 /* ========================================
    Dashboard page styling
    ====================================== */
-
 .live-view {
     background: #fff;
     margin: 24px;
@@ -549,7 +544,6 @@ hr {
 /* ========================================
    Camera page styling
    ====================================== */
-
 .camera-wrapper {
     display: grid;
     grid-template-columns: 22% minmax(0, 1fr);
@@ -861,9 +855,93 @@ hr {
     column-count: 2;
 }
 /* ========================================
+    History page style
+   ====================================== */
+.filter-wrapper {
+    margin: 24px;
+    padding: 16px;
+    background: #fff;
+    position: relative;
+}
+.filter-form > * {
+    display: inline-block;
+    width: 100%;
+    margin: 9px 0;
+}
+.filter-camera > *, .filter-period > * {
+    display: inline-block;
+}
+.filter-date {
+    column-count: 2;
+}
+.filter-date input {
+    margin-left: 24px;
+}
+.filter-camera div, .filter-period div {
+    padding: 0;
+    margin: 0 12px;
+}
+.filter-form button[type="submit"] {
+    padding: 5px 16px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #1890FF;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    border-radius: 2px;
+}
+.results-wrapper {
+    margin: 24px;
+    padding: 16px;
+    background: #fff;
+    position: relative;    
+}
+.results {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.pagination-wrapper {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+.pagination-wrapper * {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.85);
+}
+.page-info {
+    padding: 5px 0;
+    margin-right: 16px;
+}
+.pagination-wrapper ul {
+    display: inline-flex;
+}
+.pagin-btn {
+    width: 32px;
+    height: 32px;
+    margin: 0 4px;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background: none;
+}
+.pagin-btn-active {
+    color: #1890FF;
+    border: 1px solid #1890FF;
+}
+.pagination-wrapper select {
+    padding: 5px 12px;
+    margin: 0 8px;
+}
+/* ========================================
    Responsive style
    ====================================== */
-
 @media only screen and (max-width: 900px) {
     /* ========================================
         General media query
@@ -926,7 +1004,7 @@ hr {
         height: auto;
         padding: 14px 18px;
     }
-    .history-container {
+    .history-wrapper {
         width: 100%;
         margin: 14px;
     }
