@@ -6,7 +6,7 @@
 		<link rel="icon" href="images/icons/main-ico.ico">
 		<link rel="stylesheet" href="style/style.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-		<title>Gallery</title>
+		<title>History</title>
 	</head>
 	<body>
 		<div class="container">
@@ -28,19 +28,238 @@
 					<li class="menu-ico">
 						<a href="./camera.html"><i class="fas fa-camera" ></i> 4</a>
 					</li>
+					<li class="menu-ico">
+						<a href="./history.html"><i class="fas fa-history" ></i></a>
+					</li>
 				</ul>
 			</nav>
-			<article class="gallery-container">
+			<article class="history-container">
 				<header class="page__header">
 					<h2>History</h2>
 				</header>
 				<section class="filter-wrapper">
-					
+					<h2>Query Snapshots</h2>
+					<hr>
+					<form action="#query-history-results" method="post" class="filter-form">
+						<div class="filter-date">
+							<label for="start-date">Start timestamp</label>
+							<input type="datetime-local">
+						</div>
+						<div class="filter-date">
+							<label for="start-date">End timestamp</label>
+							<input type="datetime-local">
+						</div>
+						<div class="filter-camera">
+							<h4>Cameras</h4>
+							<div>
+								<label for="all">All</label>
+								<input type="checkbox" class="filter-cam" id="all">
+							</div>
+							<div>
+								<label for="cam1">1</label>
+								<input type="checkbox" class="filter-cam" id="cam1">
+							</div>
+							<div>
+								<label for="cam2">2</label>
+								<input type="checkbox" class="filter-cam" id="cam2">
+							</div>
+							<div>
+								<label for="cam3">3</label>
+								<input type="checkbox" class="filter-cam" id="cam3">
+							</div>
+							<div>
+								<label for="cam4">4</label>
+								<input type="checkbox" class="filter-cam" id="cam4">
+							</div>
+						</div>
+						<div class="filter-period">
+							<h4>Time Period</h4>
+							<div>
+								<input name="period" type="radio" id="sec30">
+								<label for="sec30">30 seconds</label>
+							</div>
+							<div>
+								<input name="period" type="radio" id="min1">
+								<label for="min1">1 minute</label>
+							</div>
+							<div>
+								<input name="period" type="radio" id="min5">
+								<label for="min5">5 minutes</label>
+							</div>
+							<div>
+								<input name="period" type="radio" id="min15">
+								<label for="min15">15 minutes</label>
+							</div>
+							<div>
+								<input name="period" type="radio" id="min30">
+								<label for="min30">30 minutes</label>
+							</div>
+							<div>
+								<input name="period" type="radio" id="hour1">
+								<label for="hour1">1 hour</label>
+							</div>
+						</div>
+						<div>
+							<button type="submit">Show results</button>
+						</div>		
+					</form>
 				</section>
-				<section class="results-container">
-					<div class="history-title">
-						<h4>History</h4>
-						<p>Automatic snapshot every 30 seconds</p>
+				<section class="results-wrapper">
+					<h2>Results</h2>
+					<hr>
+					<div class="results">
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+						<div class="screenshot">
+							<div class="date">
+								<p>January 28, 2021</p>
+								<p>10:17:30 AM</p>
+							</div>
+							<img src="images/screenshot.png" class="screenshot-image">
+							<div class="screenshot-info">
+								<p>Count</p>
+								<p>10234342</p>
+							</div>
+						</div>
+					</div>
+					<div class="pagination-wrapper">
+						<ul>
+							<li class="page-info">1-10 of 100 items</li>
+							<li><button class="pagin-btn">&lt;</button></li>
+							<li><button class="pagin-btn">1</button></li>
+							<li><button class="pagin-btn">2</button></li>
+							<li><button class="pagin-btn pagin-btn-active">3</button></li>
+							<li><button class="pagin-btn">4</button></li>
+							<li><button class="pagin-btn">5</button></li>
+							<li><button class="pagin-btn">6</button></li>
+							<li>&hellip;</li>
+							<li><button class="pagin-btn">50</button></li>
+							<li><button class="pagin-btn">&gt;</button></li>
+						</ul>
+						<select name="no_results" id="">
+							<option value="12" selected>12</option>
+							<option value="24">24</option>
+							<option value="36">36</option>
+						</select>
 					</div>
 				</section>
 			</article>
