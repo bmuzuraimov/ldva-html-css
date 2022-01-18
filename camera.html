@@ -3,11 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="images/icons/main-ico.ico">
 		<link rel="stylesheet" href="style/style.css">
 		<link rel="stylesheet" href="style/morris.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 		<script src="script/sweetalert2.min.js"></script>
-		<title>Long range</title>
+		<title>Camera 1</title>
 	</head>
 	<body>
 		<div class="container">
@@ -80,7 +81,8 @@
 						<div id="graph"></div>
 						<div class="graph-info">
 							<p>Hourly Average 3500</p>
-							<p>Hourly Change 12%</p>
+							<p class="change-up">Hourly Change 12%</p>
+							<!-- change-up & change-down -->
 						</div>
 					</div>
 					<div class="video-container">
@@ -184,7 +186,7 @@
 						<hr>
 						<div class="button-box">
 							<button type="submit" class="confirm-btn" id="threshold-confirm">Confirm</button>
-							<button type="submit" class="cancel-btn" id="threshold-cancel">Cancel</button>
+							<button type="submit" class="cancel-btn modal-close" id="threshold-cancel">Cancel</button>
 						</div>
 					</form>
 				</div>
