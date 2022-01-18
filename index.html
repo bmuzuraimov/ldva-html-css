@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="style/style.css">
-		<link rel="stylesheet" href="style/morris.css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<link rel="stylesheet" href="{% static 'style/style.css' %}">
+		<link rel="stylesheet" href="{% static 'style/morris.css' %}">
+		<link rel="stylesheet" href="{% static 'https://use.fontawesome.com/releases/v5.7.1/css/all.css' %}">
 		<title>Long range</title>
 	</head>
 	<body>
@@ -223,10 +223,10 @@
 			</div>
 		<!--//Modal-bg-->
 		</div>
-		<script type="text/javascript" src="script/jquery.js"></script>
-		<script type="text/javascript" src="script/morris.min.js"></script>
-		<script type="text/javascript" src="script/raphael-min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-		<script type="text/javascript" src="script/script.js"></script>
+		<script type="text/javascript" src="{% static 'script/jquery.js' %}"></script>
+		<script type="text/javascript" src="{% static 'script/morris.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'script/raphael-min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'script/script.js' %}"></script>
 	</body>
 </html>
