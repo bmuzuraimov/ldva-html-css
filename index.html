@@ -3,10 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="images/icons/main-ico.ico">
 		<link rel="stylesheet" href="style/style.css">
 		<link rel="stylesheet" href="style/morris.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-		<title>Long range</title>
+		<title>Dashboard</title>
 	</head>
 	<body>
 		<div class="container">
@@ -43,7 +44,7 @@
 					<div class="live-wrapper">
 						<div class="live-cam">
 							<h2>Camera 1</h2>
-							<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+							<a href="./camera.html"><video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video></a>
 							<div class="screenshot-info">
 								<p>Count</p>
 								<p>10234342</p>
@@ -51,7 +52,7 @@
 						</div>
 						<div class="live-cam">
 							<h2>Camera 2</h2>
-							<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+							<a href="./camera.html"><video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video></a>
 							<div class="screenshot-info">
 								<p>Count</p>
 								<p>10234342</p>
@@ -59,7 +60,7 @@
 						</div>
 						<div class="live-cam">
 							<h2>Camera 3</h2>
-							<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+							<a href="./camera.html"><video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video></a>
 							<div class="screenshot-info">
 								<p>Count</p>
 								<p>10234342</p>
@@ -67,7 +68,7 @@
 						</div>
 						<div class="live-cam">
 							<h2>Camera 4</h2>
-							<video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video>
+							<a href="./camera.html"><video controls autoplay="true" src="crowded-people.mp4" class="live-video"></video></a>
 							<div class="screenshot-info">
 								<p>Count</p>
 								<p>10234342</p>
@@ -133,11 +134,11 @@
 					<div class="history-title">
 						<h4>History</h4>
 						<ul class="live-btn-box">
-							<li><button class="live-cam-btn live-cam-active">All cameras</button></li>
-							<li><button class="live-cam-btn">Camera 1</button></li>
-							<li><button class="live-cam-btn">Camera 2</button></li>
-							<li><button class="live-cam-btn">Camera 3</button></li>
-							<li><button class="live-cam-btn">Camera 4</button></li>
+							<li><button class="live-cam-btn live-cam-active" value="All cameras">All cameras</button></li>
+							<li><button class="live-cam-btn" value="Camera 1">Camera 1</button></li>
+							<li><button class="live-cam-btn" value="Camera 2">Camera 2</button></li>
+							<li><button class="live-cam-btn" value="Camera 3">Camera 3</button></li>
+							<li><button class="live-cam-btn" value="Camera 4">Camera 4</button></li>
 						</ul>
 					</div>
 					<hr>
