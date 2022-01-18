@@ -2,74 +2,77 @@
     General script
    ====================================== */
 /* == Graph object == */
-new Morris.Area({
-    element: 'graph',
-    data: [{
-        date: '1/12/2022',
-        value: 264
-    }, {
-        date: '2/12/2022',
-        value: 50
-    }, {
-        date: '3/12/2022',
-        value: 473
-    }, {
-        date: '4/12/2022',
-        value: 345
-    }, {
-        date: '5/12/2022',
-        value: 20
-    }, {
-        date: '5/12/2022',
-        value: 543
-    }, {
-        date: '5/12/2022',
-        value: 23
-    }, {
-        date: '5/12/2022',
-        value: 542
-    }],
-    xkey: 'date',
-    axes: 'y',
-    axes: 'x',
-    lineWidth: 1,
-    parseTime: false,
-    ykeys: ['value'],
-    labels: ['#'],
-    hideHover: true,
-    lineColors: ['#3494ed'],
-});
-
+if ($('#graph').length) {
+    new Morris.Area({
+        element: 'graph',
+        data: [{
+            date: '1/12/2022',
+            value: 264
+        }, {
+            date: '2/12/2022',
+            value: 50
+        }, {
+            date: '3/12/2022',
+            value: 473
+        }, {
+            date: '4/12/2022',
+            value: 345
+        }, {
+            date: '5/12/2022',
+            value: 20
+        }, {
+            date: '5/12/2022',
+            value: 543
+        }, {
+            date: '5/12/2022',
+            value: 23
+        }, {
+            date: '5/12/2022',
+            value: 542
+        }],
+        xkey: 'date',
+        axes: 'y',
+        axes: 'x',
+        lineWidth: 1,
+        parseTime: false,
+        ykeys: ['value'],
+        labels: ['#'],
+        hideHover: true,
+        lineColors: ['#3494ed'],
+    });
+}
 /* == Image slider == */
-$('.screenshot-wrapper').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    infinite: false,
-    lazyLoad: 'ondemand',
-    nextArrow: $('.slider-next'),
-    prevArrow: $('.slider-prev'),
-    responsive: [{
-        breakpoint: 1024,
-        settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
-        }
-    }, {
-        breakpoint: 850,
-        settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-        }
-    }, {
-        breakpoint: 600,
-        settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-        }
-    }],
-});
+if ($('.screenshot-wrapper')[0]) {
+    $('.screenshot-wrapper').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: false,
+        lazyLoad: 'ondemand',
+        nextArrow: $('.slider-next'),
+        prevArrow: $('.slider-prev'),
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        }, {
+            breakpoint: 850,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        }, {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }],
+    });
+}
 //Modal popups
 $('img.screenshot-image').click(() => {
     $('.modal-bg').addClass('modal-bg-active');
@@ -244,4 +247,13 @@ if ($('.camera-container')[0]) { //if camera class exists
             }).appendTo('.drawing-area');
         }
     });
+}
+if ($('.history-container')[0]) { //if dashboard class exists
+    $('#all').change(function() {
+        if(this.checked) {
+            $('.filter-cam').prop('checked', true);
+        }else{
+            $('.filter-cam').prop('checked', false);
+        }        
+    });    
 }
