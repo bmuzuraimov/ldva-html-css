@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="images/icons/main-ico.ico">
+		<link rel="stylesheet" href="style/style.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<title>Gallery</title>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="menu">
+				<a href="#navbar" class="menu__logo"><img src="images/icons/ai-academy.svg" alt="logo"></a>
+				<ul>
+					<li class="menu-ico">
+						<a href="./index.html"><i class="fa fa-home"></i></a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera ico-active" ></i> 1</a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera" ></i> 2</a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera"  ></i> 3</a>
+					</li>
+					<li class="menu-ico">
+						<a href="./camera.html"><i class="fas fa-camera" ></i> 4</a>
+					</li>
+				</ul>
+			</nav>
+			<article class="gallery-container">
+				<header class="page__header">
+					<h2>History</h2>
+				</header>
+				<section class="filter-wrapper">
+					
+				</section>
+				<section class="results-container">
+					<div class="history-title">
+						<h4>History</h4>
+						<p>Automatic snapshot every 30 seconds</p>
+					</div>
+				</section>
+			</article>
+		</div>
+		<!--Modal-bg-->
+		<div class="modal-bg">
+			<div class="modal">
+				<!--modal-history-zoom-->
+				<div class="modal-history">
+					<span class="modal-close"><i class="fas fa-times"></i></span>
+					<h6 class="page-title">Snapshots</h6>
+					<hr>
+					<i class="fas fa-chevron-left camera-prev"></i>
+					<i class="fas fa-chevron-right camera-next"></i>
+					<div class="modal-image">
+						<img src="images/modal-img.png">
+					</div>
+					<div class="screenshot-info">
+						<p>Count 124567</p>
+						<p>January 28, 2021 10:17:30 AM</p>						
+					</div>
+				</div>
+			</div>
+		<!--//Modal-bg-->
+		</div>
+		<script type="text/javascript" src="script/jquery.js"></script>
+		<script type="text/javascript" src="script/morris.min.js"></script>
+		<script type="text/javascript" src="script/script.js"></script>
+	</body>
+</html>
