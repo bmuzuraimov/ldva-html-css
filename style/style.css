@@ -274,6 +274,7 @@ hr {
     border: 2px solid rgba(255, 255, 255, .5);
     background: none;
     padding: 12px 0;
+    font-size: 16px;
 }
 .live-cam-active {
     color: #1890FF;
@@ -281,8 +282,25 @@ hr {
     transition: 0.3s;
 }
 .history-title {
-    display: inline-flex;
-    padding: 12px;
+    display: flex;
+    column-gap: 8px;
+}
+
+.history-title div {
+    flex:1;
+}
+
+.history-title-right {
+    position: relative;
+    padding:8px;
+}
+
+.history-title-right p {
+ 
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
 }
 .screenshots {
     position: relative;
@@ -373,7 +391,7 @@ hr {
 }
 .login-form {
     width: 360px;
-    position: relative
+    position: relative;
     padding: 0;
     margin: 0 auto;
 }
