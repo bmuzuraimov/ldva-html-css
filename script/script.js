@@ -114,6 +114,13 @@ if ($('.camera-container')[0]) {
     let f_point = true; // remember first point to check if distance with last point is close
     const regions = new Array(); // all regions
     let cur_region = new Array(); // current region coordinates
+    $('#face-mask').change(function() {
+        if(this.checked) {
+            // face mask checkbox checked
+        }else{
+            // face mask checkbox unchecked
+        }        
+    });
     $('#streaming-video').mousemove(() => {
         m_pos.x = event.pageX - vid_bound.left;
         m_pos.y = event.pageY - vid_bound.top;
@@ -148,7 +155,7 @@ if ($('.camera-container')[0]) {
             $(`.drawing-area line:nth-last-of-type(-n+${cur_region.length})`).remove();
             cur_region = [];
             f_point = true;
-        } else {
+        } else if(mode === 'Save'){
             Swal.fire({
               title: 'Image saved!',
               icon: 'success',
