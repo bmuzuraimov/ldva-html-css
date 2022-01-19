@@ -260,5 +260,14 @@ if ($('.history-container')[0]) { //if dashboard class exists
         }else{
             $('.filter-cam').prop('checked', false);
         }        
-    });    
+    }); 
+    $('#show-result').click(function() {
+        alert('Searching results');       
+    });
+    $('.pagin-btns').on('click', '.pagin-btn', function() {
+        alert('Page #'+$(this).val());
+    });
+    $('#pagin-select').on('change', function() {
+      alert(this.value);
+    });   
 }
