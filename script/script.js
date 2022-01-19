@@ -74,7 +74,12 @@ if ($('.screenshot-wrapper')[0]) {
     });
 }
 //Modal popups
-$('img.screenshot-image').click(() => {
+$('.screenshot').on('click', '.screenshot-card', function(){
+    const index = $(this).index('.screenshot-card');
+    const src = $('.screenshot-image').eq(index).attr('src');
+    const modal_count = 'Count ' + $(this).find('.date').val();
+    $('.modal-count').html(modal_count);
+    $('.modal-image img').attr('src', src);
     $('.modal-bg').addClass('modal-bg-active');
     $('.modal-history').css({display: 'block'});
 });
