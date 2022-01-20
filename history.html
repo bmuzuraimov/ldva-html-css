@@ -43,33 +43,33 @@
 					<form action="#query-history-results" method="post" class="filter-form">
 						<div class="filter-date">
 							<label for="start-date">Start timestamp</label>
-							<input type="datetime-local">
+							<input name="start-time" type="datetime-local">
 						</div>
 						<div class="filter-date">
 							<label for="start-date">End timestamp</label>
-							<input type="datetime-local">
+							<input name="end-time" type="datetime-local">
 						</div>
 						<div class="filter-camera">
 							<h4>Cameras</h4>
 							<div>
 								<label for="all">All</label>
-								<input type="checkbox" class="filter-cam" id="all">
+								<input type="checkbox" name="camera[]" class="filter-cam" id="all" value="cam-all">
 							</div>
 							<div>
 								<label for="cam1">1</label>
-								<input type="checkbox" class="filter-cam" id="cam1">
+								<input type="checkbox" name="camera[]" class="filter-cam" id="cam1" value="cam-1">
 							</div>
 							<div>
 								<label for="cam2">2</label>
-								<input type="checkbox" class="filter-cam" id="cam2">
+								<input type="checkbox" name="camera[]" class="filter-cam" id="cam2" value="cam-2">
 							</div>
 							<div>
 								<label for="cam3">3</label>
-								<input type="checkbox" class="filter-cam" id="cam3">
+								<input type="checkbox" name="camera[]" class="filter-cam" id="cam3" value="cam-3">
 							</div>
 							<div>
 								<label for="cam4">4</label>
-								<input type="checkbox" class="filter-cam" id="cam4">
+								<input type="checkbox" name="camera[]" class="filter-cam" id="cam4" value="cam-4">
 							</div>
 						</div>
 						<div class="filter-period">
